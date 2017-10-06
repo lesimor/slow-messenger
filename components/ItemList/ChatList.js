@@ -1,15 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, FlatList, ListItem } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import { SearchTextInput } from '../GenericTextInput'
 
 export default class ChatList extends React.Component {
     render() {
         const chat_list = [
             {
                 imageUrl: 'https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png',
+                name: "채팅방1",
                 key: "채팅방1"
             },
             {
                 imageUrl: 'https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png',
+                name: "채팅방2",
                 key: "채팅방2"
             }
         ];
@@ -18,24 +21,40 @@ export default class ChatList extends React.Component {
             <FlatList
                 data={chat_list}
                 renderItem={this._renderItem}
+                ListHeaderComponent={this._renderListHeader}
             />
         );
     }
 
+    _renderListHeader = () => {
+        return(
+            <SearchTextInput/>
+        )
+    };
+
     _renderItem = ({item}) => {
         return(
-            <View style={styles.container}>
-                <View style={styles.itemContainer}>
-                    <Image source={{ uri: item.imageUrl}} style={styles.photo} />
-                    <Text style={styles.text}>
-                        {item.key}
-                    </Text>
-                </View>
-            </View>
+            <ChatRow
+                imageUrl={item.imageUrl}
+                chatName={item.name}
+            />
         )
     }
 
 }
+
+const ChatRow = ({imageUrl, chatName}) => {
+    return(
+        <View style={styles.container}>
+            <View style={styles.itemContainer}>
+                <Image source={{ uri: imageUrl}} style={styles.photo} />
+                <Text style={styles.text}>
+                    {chatName}
+                </Text>
+            </View>
+        </View>
+    )
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -54,8 +73,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     photo: {
-        height: 40,
-        width: 40,
-        borderRadius: 20,
+        height: 50,
+        width: 50,
+        borderRadius: 25,
     },
 });

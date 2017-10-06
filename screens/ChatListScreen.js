@@ -12,8 +12,7 @@ export default class ChatListScreen extends React.Component {
   render() {
     return (
      <View style={styles.container}>
-        <SearchTextInput/>
-        <ChatList />
+       <ChatList />
       </View>
     );
   }

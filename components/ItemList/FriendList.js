@@ -1,5 +1,6 @@
 import React from 'react';
 import { SectionList, Image, StyleSheet, Text, View } from 'react-native';
+import { SearchTextInput } from '../GenericTextInput'
 
 export default class FriendList extends React.Component {
     render() {
@@ -15,11 +16,18 @@ export default class FriendList extends React.Component {
                 renderItem={this._renderItem}
                 renderSectionHeader={this._renderSectionHeader}
                 stickySectionHeadersEnabled={true}
+                ListHeaderComponent={this._renderListHeader}
                 keyExtractor={(item, index) => index}
                 sections={sections}
             />
         );
     }
+
+    _renderListHeader = () => {
+        return(
+            <SearchTextInput/>
+        )
+    };
 
     _renderSectionHeader = ({ section }) => {
         return <SectionHeader title={section.title} />;

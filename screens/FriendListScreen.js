@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  ScrollView,
-  StyleSheet,
+    ScrollView,
+    View,
+    StyleSheet,
 } from 'react-native';
 import FriendList from '../components/ItemList/FriendList'
 import { SearchTextInput } from '../components/GenericTextInput'
@@ -14,7 +15,6 @@ export default class FriendListScreen extends React.Component {
   render() {
       return (
           <ScrollView style={styles.container}>
-            <SearchTextInput />
             <FriendList />
           </ScrollView>
       );
