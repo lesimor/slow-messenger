@@ -3,7 +3,7 @@ import {
   ScrollView,
   StyleSheet,
 } from 'react-native';
-import FriendsList from '../components/ItemList/FriendsList'
+import FriendList from '../components/ItemList/FriendList'
 import { SearchTextInput } from '../components/GenericTextInput'
 
 export default class FriendListScreen extends React.Component {
@@ -11,12 +11,11 @@ export default class FriendListScreen extends React.Component {
     title: "친구"
   };
 
-
   render() {
       return (
           <ScrollView style={styles.container}>
             <SearchTextInput />
-            <FriendsList />
+            <FriendList />
           </ScrollView>
       );
   }

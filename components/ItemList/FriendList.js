@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionList, Image, StyleSheet, Text, View } from 'react-native';
 
-export default class FriendsList extends React.Component {
+export default class FriendList extends React.Component {
     render() {
         const sections = [
             { data: [{ value: "강병욱" }], title: '내 프로필' },
@@ -111,7 +111,6 @@ const styles = StyleSheet.create({
     friendNameText: {
         fontWeight: '600',
         fontSize: 18,
-
     },
     sectionHeaderContainer: {
         backgroundColor: '#fbfbfb',

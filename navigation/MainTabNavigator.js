@@ -6,7 +6,7 @@ import { TabNavigator, TabBarBottom } from 'react-navigation';
 import Colors from '../constants/Colors';
 
 import FriendListScreen from '../screens/FriendListScreen';
-import LinksScreen from '../screens/LinksScreen';
+import ChatListScreen from '../screens/ChatListScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
 export default TabNavigator(
@@ -15,7 +15,7 @@ export default TabNavigator(
       screen: FriendListScreen,
     },
     Links: {
-      screen: LinksScreen,
+      screen: ChatListScreen,
     },
     Settings: {
       screen: SettingsScreen,
