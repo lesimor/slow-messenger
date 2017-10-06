@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
-import { SearchTextInput } from '../GenericTextInput'
+import { SearchTextInput } from '../TextInput'
 
 export default class ChatList extends React.Component {
     render() {
@@ -59,7 +59,6 @@ const ChatRow = ({imageUrl, chatName}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 15,
         backgroundColor: '#fff',
     },
     itemContainer: {

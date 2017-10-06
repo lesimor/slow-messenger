@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {TextInput, StyleSheet} from 'react-native'
+import {TextInput, StyleSheet, View} from 'react-native'
 
 export default class SearchTextInput extends Component {
     constructor(props) {
@@ -9,16 +9,22 @@ export default class SearchTextInput extends Component {
 
     render() {
         return (
-            <TextInput
-                style={styles.search}
-                onChangeText={(text) => this.setState({text})}
-                placeholder= {"친구 채팅방 검색"}
-            />
+            <View style={styles.inputContainer}>
+                <TextInput
+                    style={styles.search}
+                    onChangeText={(text) => this.setState({text})}
+                    placeholder= {"친구 채팅방 검색"}
+                />
+            </View>
+
         );
     }
 }
 
 const styles = StyleSheet.create({
+    inputContainer: {
+        backgroundColor: '#fbfbfb',
+    },
     search: {
         height: 30,
         borderColor: '#f1efef',
@@ -26,6 +32,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginLeft: 10,
         marginRight: 10,
+        marginTop: 5,
+        marginBottom: 5,
         textAlign: 'center'
     }
 });

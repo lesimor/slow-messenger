@@ -5,7 +5,7 @@ import {
     StyleSheet,
 } from 'react-native';
 import FriendList from '../components/ItemList/FriendList'
-import { SearchTextInput } from '../components/GenericTextInput'
+import { SearchTextInput } from '../components/TextInput'
 
 export default class FriendListScreen extends React.Component {
   static navigationOptions = {
@@ -14,17 +14,7 @@ export default class FriendListScreen extends React.Component {
 
   render() {
       return (
-          <ScrollView style={styles.container}>
-            <FriendList />
-          </ScrollView>
+          <FriendList />
       );
   }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: 15,
-        backgroundColor: '#fff',
-    },
-});

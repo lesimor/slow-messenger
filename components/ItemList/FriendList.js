@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionList, Image, StyleSheet, Text, View } from 'react-native';
-import { SearchTextInput } from '../GenericTextInput'
+import { SearchTextInput } from '../TextInput'
 
 export default class FriendList extends React.Component {
     render() {
