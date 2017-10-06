@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ListView, FlatList } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList, ListItem } from 'react-native';
 
 export default class ChatList extends React.Component {
     render() {
-        const chatList = [
+        const chat_list = [
             {
                 imageUrl: 'https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png',
                 key: "채팅방1"
@@ -16,19 +16,19 @@ export default class ChatList extends React.Component {
 
         return (
             <FlatList
-                data={chatList}
+                data={chat_list}
                 renderItem={this._renderItem}
             />
         );
     }
 
-    _renderItem = (data) => {
+    _renderItem = ({item}) => {
         return(
             <View style={styles.container}>
                 <View style={styles.itemContainer}>
-                    <Image source={{ uri: data.imageUrl}} style={styles.photo} />
+                    <Image source={{ uri: item.imageUrl}} style={styles.photo} />
                     <Text style={styles.text}>
-                        {data.key}
+                        {item.key}
                     </Text>
                 </View>
             </View>
