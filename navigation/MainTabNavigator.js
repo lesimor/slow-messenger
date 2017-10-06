@@ -29,18 +29,18 @@ export default TabNavigator(
         switch (routeName) {
           case 'Home':
             iconName = Platform.OS === 'ios'
-              ? `ios-information-circle${focused ? '' : '-outline'}`
-              : 'md-information-circle';
+              ? `ios-person${focused ? '' : '-outline'}`
+              : 'md-person';
             break;
           case 'Links':
             iconName = Platform.OS === 'ios'
-              ? `ios-link${focused ? '' : '-outline'}`
-              : 'md-link';
+              ? `ios-chatbubbles${focused ? '' : '-outline'}`
+              : 'md-chatbubbles';
             break;
           case 'Settings':
             iconName = Platform.OS === 'ios'
-              ? `ios-options${focused ? '' : '-outline'}`
-              : 'md-options';
+              ? `ios-settings${focused ? '' : '-outline'}`
+              : 'md-settings';
         }
         return (
           <Ionicons
