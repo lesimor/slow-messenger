@@ -18,11 +18,11 @@ import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
 
 
-export default class HomeScreen extends React.Component {
+export default class FriendListScreen extends React.Component {
   static navigationOptions = {
     title: "친구"
   };
-
+    
 
   render() {
       return (
