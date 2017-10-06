@@ -20,8 +20,12 @@ export default class SearchTextInput extends Component {
 
 const styles = StyleSheet.create({
     search: {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1
+        height: 30,
+        borderColor: '#f1efef',
+        backgroundColor: '#f1efef',
+        borderWidth: 1,
+        marginLeft: 10,
+        marginRight: 10,
+        textAlign: 'center'
     }
-})
+});
