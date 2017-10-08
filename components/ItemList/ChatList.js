@@ -1,6 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native';
+import { StackNavigator } from 'react-navigation'
+import { ChatRow } from '../Item'
 import { SearchTextInput } from '../TextInput'
+import ChatScreen from '../../screens/ChatScreen';
 
 export default class ChatList extends React.Component {
     render() {
@@ -43,18 +46,18 @@ export default class ChatList extends React.Component {
 
 }
 
-const ChatRow = ({imageUrl, chatName}) => {
-    return(
-        <View style={styles.container}>
-            <View style={styles.itemContainer}>
-                <Image source={{ uri: imageUrl}} style={styles.photo} />
-                <Text style={styles.text}>
-                    {chatName}
-                </Text>
-            </View>
-        </View>
-    )
-};
+// const ChatRow = ({imageUrl, chatName}) => {
+//     return(
+//         <TouchableOpacity style={styles.container}>
+//             <View style={styles.itemContainer}>
+//                 <Image source={{ uri: imageUrl}} style={styles.photo} />
+//                 <Text style={styles.text}>
+//                     {chatName}
+//                 </Text>
+//             </View>
+//         </TouchableOpacity>
+//     )
+// };
 
 const styles = StyleSheet.create({
     container: {

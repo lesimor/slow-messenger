@@ -1,17 +1,31 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import ChatScreen from '../../screens/ChatScreen';
 
-const Row = (props) => (
-    <View style={styles.container}>
-        <Image source={{ uri: props.picture.large}} style={styles.photo} />
-        <Text style={styles.text}>
-            {`${props.name.first} ${props.name.last}`}
-        </Text>
-    </View>
-);
+
+export default class ChatRow extends React.Component {
+    render(){
+        return(
+            <TouchableOpacity style={styles.container} onPress={() => this.props.navigation.navigate('Chat')}>
+                <View style={styles.itemContainer}>
+                    <Image source={{ uri: this.props.imageUrl}} style={styles.photo} />
+                    <Text style={styles.text}>
+                        {this.props.chatName}
+                    </Text>
+                </View>
+            </TouchableOpacity>
+        )
+    }
+}
+
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
+    itemContainer: {
         flex: 1,
         padding: 12,
         flexDirection: 'row',
@@ -22,11 +36,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     photo: {
-        height: 40,
-        width: 40,
-        borderRadius: 20,
+        height: 50,
+        width: 50,
+        borderRadius: 25,
     },
 });
-
-
-export default Row;
